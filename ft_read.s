@@ -1,7 +1,7 @@
-    global _ft_write
+    global _ft_read
     section .text
-_ft_write:
-    mov rax, 0x02000004
+_ft_read:
+    mov rax, 0x02000003
     syscall
     ret
     mov rax, 0x02000001
