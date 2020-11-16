@@ -3,15 +3,21 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include <fcntl.h>
+<<<<<<< HEAD
 #include<errno.h>
+=======
+>>>>>>> 1ca60ef0b059aefe3cca2b5263cb66bc71bf757e
 
 int ft_strcmp(char*,char*);
 int ft_strlen(char *);
 char *ft_strcpy(char *d,char *s);
 int ft_write(int,char*,int);
 int ft_read(int,char*,int);
+<<<<<<< HEAD
 char *ft_strdup(char*);
 // int ft_strdup(char*);
+=======
+>>>>>>> 1ca60ef0b059aefe3cca2b5263cb66bc71bf757e
 
 int main()
 {
@@ -65,6 +71,7 @@ int main()
 }
 
 
+<<<<<<< HEAD
 // #include <stdio.h>
 // #include <fcntl.h>
 // #include <stdlib.h>
@@ -86,6 +93,25 @@ int main()
 //     //   }
 //     printf("fd=%d\n",fd);
 //     printf("errno=%d\n",errno);
+=======
+
+    // int fd=open("test.txt",O_WRONLY);
+    // printf("fd=%d\n",fd);
+    // printf("%d\n",ft_write(1,"amal",5));
+    // printf("%zu\n",write(1,"amal",5));
+    // printf("%d\n",ft_write(fd,"amal",10));
+
+    int fd=open("test.txt",O_RDONLY);
+    int ret1,ret2;
+    char *s1=malloc(9*sizeof(char));
+    char *s2=malloc(9*sizeof(char));
+    ret1 = read(fd,s1,4);
+    ret2=ft_read(fd,s2,4);
+    printf("read        fd=%d   ret=%d\n",fd,ret1);
+    printf("ft_read     fd=%d   ret=%d\n",fd,ret2);
+    printf("read        %s\n",s1);
+    printf("ft_read     %s\n",s2);
+>>>>>>> 1ca60ef0b059aefe3cca2b5263cb66bc71bf757e
 
 //     printf("write ret =%zd\n",write(fd,"amal",5));
 //     // printf("write ret =%d\n",ft_write(fd,"amal",5));
