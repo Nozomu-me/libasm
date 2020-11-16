@@ -3,10 +3,8 @@
 _ft_strlen:
       xor rcx,rcx
 loop:
-
-      cmp [rdi], byte 0
+      cmp [rdi + rcx], byte 0
       je finish
-      inc rdi
       inc rcx
       jmp loop
 finish:
