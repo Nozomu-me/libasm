@@ -13,5 +13,4 @@ error:
     mov [rax], dl
     mov rax, -1
     pop rbp
-    
     ret
