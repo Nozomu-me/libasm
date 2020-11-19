@@ -7,10 +7,9 @@ _ft_read:
     jc error
     ret
 error:
-    push rbp
-    mov dl, al
+    push rax
     call ___error
-    mov [rax], dl
+    pop rdx
+    mov [rax], rdx
     mov rax, -1
-    pop rbp
     ret
