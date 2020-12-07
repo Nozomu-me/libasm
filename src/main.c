@@ -21,15 +21,15 @@ int main()
     // printf("%lu\n",strlen(""));
 
 
-    char *dest = strdup("world");
-    char *src = strdup("hello");
-    printf("src=%s      dest=%s     |%s|\n",src,dest,ft_strcpy(dest,src));
-    printf("src=%s      dest=%s     |%s|\n",src,dest,strcpy(dest,src));
+    // char *dest = strdup("world");
+    // char *src = strdup("hello");
+    // printf("src=%s      dest=%s     |%s|\n",src,dest,ft_strcpy(dest,src));
+    // printf("src=%s      dest=%s     |%s|\n",src,dest,strcpy(dest,src));
 
-    dest = strdup("");
-    src = strdup("hello");
-    printf("src=%s      dest=%s     |%s|\n",src,dest,ft_strcpy(dest,src));
-    printf("src=%s      dest=%s     |%s|\n",src,dest,strcpy(dest,src));
+    // dest = strdup("");
+    // src = strdup("hello");
+    // printf("src=%s      dest=%s     |%s|\n",src,dest,ft_strcpy(dest,src));
+    // printf("src=%s      dest=%s     |%s|\n",src,dest,strcpy(dest,src));
 
     // char *s1="hello";
     // char *s2="helo";
@@ -45,26 +45,26 @@ int main()
     // printf("%zd\n",write(fd,"hello",5));
 
 
-    // int fd=open("test.txt",O_RDONLY);
-    // int ret1,ret2;
-    // char *s1=malloc(9*sizeof(char));
-    // char *s2=malloc(9*sizeof(char));
-    // ret2 = ft_read(100,s2,20);
-    // printf("ft_read     errno=%d\n",errno);
-    // close(fd);
-    // fd=open("test.txt",O_RDONLY);
-    // ret1 = read(100,s1,20);
-    // printf("read        errno=%d\n\n",errno);
-    // printf("ft_read     fd=%d   ret=%d\n",fd,ret2);
-    // printf("read        fd=%d   ret=%d\n\n",fd,ret1);
-    // printf("ft_read     %s\n",s2);
-    // printf("read        %s\n",s1);
+    int fd=open("test.txt",O_RDONLY);
+    int ret1,ret2;
+    char *s1=malloc(9*sizeof(char));
+    char *s2=malloc(9*sizeof(char));
+    ret2 = ft_read(fd,s2,20);
+    printf("ft_read     errno=%d\n",errno);
+    close(fd);
+    fd=open("test.txt",O_RDONLY);
+    ret1 = read(fd,s1,20);
+    printf("read        errno=%d\n\n",errno);
+    printf("ft_read     fd=%d   ret=%d\n",fd,ret2);
+    printf("read        fd=%d   ret=%d\n\n",fd,ret1);
+    printf("ft_read     %s\n",s2);
+    printf("read        %s\n",s1);
 
     // char *s1,*s2;
     // s1=strdup("hello world");
     // s2=ft_strdup("hello world");
     // printf("%s\n",s1);
     // printf("%s\n",s2);
-    // printf("%d",ft_strdup("hello world"));
+    // printf("%s",ft_strdup("hello world"));
 
 }

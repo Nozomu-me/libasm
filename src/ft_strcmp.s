@@ -5,47 +5,18 @@ _ft_strcmp:
     xor rax, rax
     xor rdx, rdx
 loop:
-    cmp [rdi] ,byte 0
+    cmp [rdi + rcx] ,byte 0
     je finish
-    cmp [rsi ],byte 0
+    cmp [rsi + rcx],byte 0
     je finish
-    mov dl, [rdi]
-    cmp dl , [rsi]
+    mov dl, [rdi + rcx]
+    cmp dl , [rsi + rcx]
     jne finish
-    inc rdi
-    inc rsi
+    inc rcx
     jmp loop
 
 finish:
-    mov al,[rdi]
-    mov dl,[rsi]
+    mov al,[rdi + rcx]
+    mov dl,[rsi + rcx]
     sub rax, rdx
     ret
-
-
-; global _ft_strcmp
-;     section .text
-; _ft_strcmp:
-;     xor rcx, rcx
-;     xor rax, rax
-; loop:
-;     cmp [rdi] ,byte 0
-;     je finish
-;     cmp [rsi ],byte 0
-;     je finish
-;     mov dl, [rdi ]
-;     cmp dl , [rsi ]
-;     jne finish
-;     inc rdi
-;     inc rsi
-;     jmp loop
-; check:
-;     mov al,[rsi] 
-;     sub al,[rdi] 
-;     neg rax
-;     ret
-; finish:
-;     mov al,[rdi]
-;     sub al,[rsi]
-;     js check
-;     ret
